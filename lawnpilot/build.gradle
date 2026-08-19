@@ -5,7 +5,47 @@ plugins {
 group = 'org.example'
 version = '1.0-SNAPSHOT'
 
+java {
+    toolchain {
+        languageVersion = JavaLanguageVersion.of(17)
+    }
+}
+
 repositories {
     mavenCentral()
+}
+
+dependencies {
+    testImplementation platform('org.junit:junit-bom:5.10.0')
+    testImplementation 'org.junit.jupiter:junit-jupiter'
+    testRuntimeOnly 'org.junit.platform:junit-platform-launcher'
+
+    testImplementation gradleTestKit()
+}
+
+test {
+    useJUnitPlatform()
+}
+
+def fakeJavaVersion = providers.gradleProperty('fakeJavaVersion')
+
+//Custom validation task ( requirement not lower dan Java 17)
+tasks.register('validateJavaVersion') {
+    doFirst {
+        def currentVersion = fakeJavaVersion.present
+                ? JavaVersion.toVersion(fakeJavaVersion.get())
+                : JavaVersion.current()
+
+        if (!currentVersion.isCompatibleWith(JavaVersion.VERSION_17)) {
+            throw new GradleException(
+                    "Build failed: You are using Java ${currentVersion}, " +
+                            "this project requires Java 17 or higher."
+            )
+        }
+    }
+}
+
+tasks.withType(JavaCompile).configureEach {
+    dependsOn 'validateJavaVersion'
 }
 
