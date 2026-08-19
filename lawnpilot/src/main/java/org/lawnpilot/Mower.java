@@ -24,33 +24,16 @@ public class Mower {
     }
 
     private void turnLeft() {
-        switch (direction) {
-            case N -> direction = Direction.W;
-            case W -> direction = Direction.S;
-            case E -> direction = Direction.N;
-            case S -> direction = Direction.E;
-        }
+        direction = direction.left();
     }
 
     private void turnRight() {
-        switch (direction) {
-            case E -> direction = Direction.S;
-            case N -> direction = Direction.E;
-            case S -> direction = Direction.W;
-            case W -> direction = Direction.N;
-        }
+        direction = direction.right();
     }
 
     private void move(Lawn lawn) {
-        int nextX = x;
-        int nextY = y;
-
-        switch (direction) {
-            case N -> nextY++;
-            case W -> nextX--;
-            case E -> nextX++;
-            case S -> nextY--;
-        }
+        int nextX = x + direction.getDirectionX();
+        int nextY = y + direction.getDirectionY();
 
         if (lawn.isInside(nextX, nextY)) {
             x = nextX;
