@@ -25,6 +25,9 @@ dependencies {
 
 test {
     useJUnitPlatform()
+    testLogging {
+        events 'passed', 'failed', 'skipped'
+    }
 }
 
 def fakeJavaVersion = providers.gradleProperty('fakeJavaVersion')
