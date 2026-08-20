@@ -14,12 +14,15 @@ public class LawnMowerApplication {
     private final MowerRunner mowerRunner;
     private final OutputPrinter outputPrinter;
 
+    public LawnMowerApplication(InputReader inputReader,
+                                InputParser inputParser,
+                                MowerRunner mowerRunner,
+                                OutputPrinter outputPrinter) {
+        this.inputReader = inputReader;
+        this.inputParser = inputParser;
+        this.mowerRunner = mowerRunner;
+        this.outputPrinter = outputPrinter;
 
-    public LawnMowerApplication() {
-        this.inputReader = new InputReader();
-        this.inputParser = new InputParser();
-        this.mowerRunner = new MowerRunner();
-        this.outputPrinter = new OutputPrinter();
     }
 
 

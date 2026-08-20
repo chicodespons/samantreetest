@@ -14,4 +14,8 @@ Is a mower supposed to treat an occupied square the way it treats a lewn edge. W
 
 8) Direction is an empty enum , better to add the movement knowledge to the enum
 9) in Mower the toString() is used for output format, better to get this logic in the outputprinter
+10) let main handle what adapters are used. In the specification it is stated that 
+there are going to be many feautures in the future => to handle this in the future we can make ports(interfaces that
+have to be implemented by the different adapters (input, output), swap must then only be done in the main class
+
 
