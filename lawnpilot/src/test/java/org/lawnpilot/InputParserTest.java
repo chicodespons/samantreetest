@@ -1,24 +1,20 @@
 package org.lawnpilot;
 
 import org.junit.jupiter.api.Test;
-import org.junit.jupiter.api.io.TempDir;
 
 import java.io.IOException;
-import java.nio.file.Path;
 import java.util.List;
 
 import static org.junit.jupiter.api.Assertions.*;
 
 class InputParserTest {
 
-    @TempDir
-    Path tempDir;
 
     private final InputParser parser = new InputParser();
 
 
     @Test
-    void parsesThreeMowers() throws IOException {
+    void parsesThreeMowers() {
         List<String> lines = List.of(
                 "10 10",
                 "0 0 N",
@@ -37,7 +33,7 @@ class InputParserTest {
 
 
     @Test
-    void rejectsEmptyFile() throws IOException {
+    void rejectsEmptyFile() {
         List<String> lines = List.of();
 
         assertThrows(
@@ -46,7 +42,7 @@ class InputParserTest {
     }
 
     @Test
-    void rejectsUnknownDirection()throws IOException {
+    void rejectsUnknownDirection() {
         List<String> lines = List.of(
                 "5 5",
                 "1 2 X",
