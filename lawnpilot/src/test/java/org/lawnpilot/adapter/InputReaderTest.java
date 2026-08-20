@@ -1,4 +1,4 @@
-package org.lawnpilot.application;
+package org.lawnpilot.adapter;
 
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.io.TempDir;

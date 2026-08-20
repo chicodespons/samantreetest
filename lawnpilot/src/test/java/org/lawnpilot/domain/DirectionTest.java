@@ -1,4 +1,4 @@
-package org.lawnpilot;
+package org.lawnpilot.domain;
 
 import org.junit.jupiter.params.ParameterizedTest;
 import org.junit.jupiter.params.provider.CsvSource;

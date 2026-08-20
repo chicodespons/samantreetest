@@ -1,4 +1,6 @@
-package org.lawnpilot;
+package org.lawnpilot.application;
+
+import org.lawnpilot.domain.Lawn;
 
 import java.util.List;
 

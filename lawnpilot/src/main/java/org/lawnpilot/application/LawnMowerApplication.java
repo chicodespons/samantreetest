@@ -1,7 +1,8 @@
 package org.lawnpilot.application;
 
-import org.lawnpilot.InputParser;
-import org.lawnpilot.ParsedInput;
+import org.lawnpilot.adapter.InputParser;
+import org.lawnpilot.adapter.InputReader;
+import org.lawnpilot.adapter.OutputPrinter;
 
 import java.util.List;
 

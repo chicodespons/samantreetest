@@ -1,6 +1,7 @@
-package org.lawnpilot.application;
+package org.lawnpilot.adapter;
 
 
+import org.lawnpilot.application.LawnMowerApplication;
 
 public class Main {
 

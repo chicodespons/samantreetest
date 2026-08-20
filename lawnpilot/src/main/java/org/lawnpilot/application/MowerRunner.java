@@ -1,8 +1,5 @@
 package org.lawnpilot.application;
 
-import org.lawnpilot.MowerData;
-import org.lawnpilot.ParsedInput;
-
 import java.util.ArrayList;
 import java.util.List;
 

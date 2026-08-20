@@ -1,4 +1,10 @@
-package org.lawnpilot;
+package org.lawnpilot.adapter;
+
+import org.lawnpilot.application.MowerData;
+import org.lawnpilot.application.ParsedInput;
+import org.lawnpilot.domain.Direction;
+import org.lawnpilot.domain.Lawn;
+import org.lawnpilot.domain.Mower;
 
 import java.util.ArrayList;
 import java.util.List;

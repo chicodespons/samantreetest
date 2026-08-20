@@ -1,4 +1,4 @@
-package org.lawnpilot.application;
+package org.lawnpilot.adapter;
 
 import java.io.IOException;
 import java.nio.charset.StandardCharsets;

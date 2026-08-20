@@ -1,6 +1,7 @@
-package org.lawnpilot;
+package org.lawnpilot.adapter;
 
 import org.junit.jupiter.api.Test;
+import org.lawnpilot.application.ParsedInput;
 
 import java.util.List;
 

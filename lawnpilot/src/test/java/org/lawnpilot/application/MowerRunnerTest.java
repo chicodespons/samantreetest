@@ -1,11 +1,9 @@
 package org.lawnpilot.application;
 
 import org.junit.jupiter.api.Test;
-import org.lawnpilot.Direction;
-import org.lawnpilot.Lawn;
-import org.lawnpilot.Mower;
-import org.lawnpilot.MowerData;
-import org.lawnpilot.ParsedInput;
+import org.lawnpilot.domain.Direction;
+import org.lawnpilot.domain.Lawn;
+import org.lawnpilot.domain.Mower;
 
 import java.util.List;
 

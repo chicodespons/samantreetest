@@ -1,4 +1,4 @@
-package org.lawnpilot;
+package org.lawnpilot.domain;
 
 public class Mower {
 
