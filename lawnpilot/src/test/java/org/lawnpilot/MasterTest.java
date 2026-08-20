@@ -6,7 +6,6 @@ import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 
 import java.io.ByteArrayOutputStream;
-import java.io.IOException;
 import java.io.PrintStream;
 import java.nio.charset.StandardCharsets;
 
@@ -38,17 +37,12 @@ public class MasterTest {
 
     @Test
     @DisplayName("prints the final position and orientation of every mower, in input order")
-    void producesTheApprovedOutput() throws IOException {
+    void producesTheApprovedOutput() {
 
         Main.main(new String[0]);
         assertEquals(APPROVED_OUTPUT, actualOutput());
     }
 
-    /**
-     * {@code println} emits the platform line separator, so the captured text is normalised to
-     * {@code \n} before comparison. Without this the test passes on Linux and macOS and fails on
-     * Windows for a reason that has nothing to do with the mowers.
-     */
     private String actualOutput() {
         return captured.toString(StandardCharsets.UTF_8).replace("\r\n", "\n");
     }
