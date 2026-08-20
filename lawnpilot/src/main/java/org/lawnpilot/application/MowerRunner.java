@@ -1,12 +1,14 @@
 package org.lawnpilot.application;
 
+import org.lawnpilot.domain.Mower;
+
 import java.util.ArrayList;
 import java.util.List;
 
 public class MowerRunner {
 
-    public List<String> execute(ParsedInput parsedInput) {
-        List<String> finalPositions = new ArrayList<>();
+    public List<Mower> execute(ParsedInput parsedInput) {
+        List<Mower> mowers = new ArrayList<>();
 
         for (MowerData mowerData : parsedInput.mowers()) {
             mowerData.mower().execute(
@@ -14,9 +16,9 @@ public class MowerRunner {
                     parsedInput.lawn()
             );
 
-            finalPositions.add(mowerData.mower().toString());
+            mowers.add(mowerData.mower());
         }
 
-        return finalPositions;
+        return mowers;
     }
 }

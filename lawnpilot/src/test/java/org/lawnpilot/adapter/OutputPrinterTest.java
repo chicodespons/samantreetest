@@ -3,6 +3,8 @@ package org.lawnpilot.adapter;
 import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
+import org.lawnpilot.domain.Direction;
+import org.lawnpilot.domain.Mower;
 
 import java.io.ByteArrayOutputStream;
 import java.io.PrintStream;
@@ -40,12 +42,11 @@ class OutputPrinterTest {
 
     @Test
     void printsEveryPositionOnANewLine() {
-        List<String> positions = List.of(
-                "1 3 N",
-                "5 1 E"
-        );
+        List<Mower> mowers = List.of(
+                new Mower(1,3, Direction.N),
+                new Mower(5,1, Direction.E));
 
-        outputPrinter.printPositions(positions);
+        outputPrinter.printPositions(mowers);
 
         assertEquals(
                 """

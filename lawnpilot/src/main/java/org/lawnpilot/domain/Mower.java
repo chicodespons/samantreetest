@@ -41,8 +41,15 @@ public class Mower {
         }
     }
 
-    @Override
-    public String toString() {
-        return x + " " + y + " " + direction;
+    public int getX() {
+        return x;
+    }
+
+    public int getY() {
+        return y;
+    }
+
+    public Direction getDirection() {
+        return direction;
     }
 }

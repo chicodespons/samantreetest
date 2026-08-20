@@ -13,4 +13,5 @@ Is a mower supposed to treat an occupied square the way it treats a lewn edge. W
 => for now i chose to not care about this.
 
 8) Direction is an empty enum , better to add the movement knowledge to the enum
+9) in Mower the toString() is used for output format, better to get this logic in the outputprinter
 

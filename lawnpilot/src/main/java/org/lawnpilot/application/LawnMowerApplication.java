@@ -3,6 +3,7 @@ package org.lawnpilot.application;
 import org.lawnpilot.adapter.InputParser;
 import org.lawnpilot.adapter.InputReader;
 import org.lawnpilot.adapter.OutputPrinter;
+import org.lawnpilot.domain.Mower;
 
 import java.util.List;
 
@@ -25,7 +26,7 @@ public class LawnMowerApplication {
     public void run(String[] args) {
         List<String> input = inputReader.readInput(args);
         ParsedInput parsedInput = inputParser.parse(input);
-        List<String> finalPositions = mowerRunner.execute(parsedInput);
+        List<Mower> finalPositions = mowerRunner.execute(parsedInput);
         outputPrinter.printPositions(finalPositions);
 
     }

@@ -14,32 +14,36 @@ class MowerRunnerTest {
     private final MowerRunner mowerRunner = new MowerRunner();
 
     @Test
-    void executesMowersAndReturnsTheirFinalPositions() {
-        Lawn lawn = new Lawn(5, 5);
-
-        MowerData firstMower = new MowerData(
-                new Mower(1, 2, Direction.N),
-                "LFLFLFLFF"
-        );
-
-        MowerData secondMower = new MowerData(
-                new Mower(3, 3, Direction.E),
-                "FFRFFRFRRF"
-        );
-
+    void runEveryMowerAndReturnThemInInputOrderWithCorrectPostion() {
         ParsedInput input = new ParsedInput(
-                lawn,
-                List.of(firstMower, secondMower)
-        );
-
-        List<String> positions = mowerRunner.execute(input);
-
-        assertEquals(
+                new Lawn(5,5),
                 List.of(
-                        "1 3 N",
-                        "5 1 E"
-                ),
-                positions
+                        new MowerData(new Mower(0,0,Direction.N), "F"),
+                        new MowerData(new Mower(4,4,Direction.E), "F")
+                )
         );
+
+        List<Mower> mowers = mowerRunner.execute(input);
+
+        assertEquals(2, mowers.size());
+        assertPosition(mowers.get(0), 0, 1 , Direction.N);
+        assertPosition(mowers.get(1), 5,4, Direction.E);
+
+    }
+
+    @Test
+    void returnsEmptyListIfNoMowers() {
+        ParsedInput input = new ParsedInput(
+                new Lawn(5,5),
+                List.of()
+        );
+
+        assertEquals(List.of(), mowerRunner.execute(input));
+    }
+
+    private void assertPosition(Mower mower, int x, int y, Direction direction) {
+        assertEquals(x, mower.getX(), "x");
+        assertEquals(y, mower.getY(), "y");
+        assertEquals(direction, mower.getDirection(), "direction");
     }
 }
