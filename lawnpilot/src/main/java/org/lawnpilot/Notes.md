@@ -10,7 +10,7 @@
 
 7) mowers move sequentially => stated in specification, but in current implementation this has no observable effect => each mower's result is independent of the others, two mowers can end up on the same square.
 Is a mower supposed to treat an occupied square the way it treats a lewn edge. What if the mower is spawn on the other mower?
-=> for now i chose to not care about this.
+=> in the assignment it said to not change the current behaviour
 
 8) Direction is an empty enum , better to add the movement knowledge to the enum
 9) in Mower the toString() is used for output format, better to get this logic in the outputprinter
